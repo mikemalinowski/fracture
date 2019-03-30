@@ -1,18 +1,14 @@
-
-
+"""
 # Overview
-
 
 Fracture is a lightweight and flexible data management system. It allows
 you to interact with data through a trait compositing mechanism, whilst
 also exposing the ability to quickly query and access information
 about the data you're exploring.
 
-
 # How it works
 
-
-You start by creating a fracture project. The project file is where all
+You start by creating a fracture.Project. The project file is where all
 the metadata and look up tables are stored - allowing you to easily search
 for data assets as well as find changes.
 
@@ -28,9 +24,7 @@ which you can use to express the functionality of data. Rather than having a
 class supports class compositing. This allows for a piece of data to be
 represented by more than one class simultaneously.
 
-
 # Examples
-
 
 This example uses the ```dino_example``` data which you can download from
 https://github.com/mikemalinowski/fracture. 
@@ -128,9 +122,7 @@ data = project.get('/usr/my_data/my_file.txt')
 
 For a full demo, download the ```dino_example``` and run main.py
 
-
 # Data Composition
-
 
 As mentioned in the examples, we use class composition to bind traits together
 to represent data. This means we can have small, self contained traits which
@@ -215,7 +207,6 @@ for your project will immediately make it accessible.
 
 ## ScanProcess
 
-
 By default fracture comes with one built-in scan plugin which handles file
 scanning, so that is a good example when wanting to write your own - if you 
 have need to do so.
@@ -227,9 +218,7 @@ than cycle directories and yield file paths.
 Alternatively if you're caching data from a REST API you might be utilising
 requests within the scan process and feeding back URL's.
 
-
 # Origin
-
 
 This library is a variation on the tools demonstrated during
 GDC2018 (A Practical Approach to Developing Forward-Facing Rigs, Tools and
@@ -240,13 +229,12 @@ Slide 55 onward explores this concept. It is also explored in detail
 on this webpage:
 https://www.twisted.space/blog/insight-localised-asset-management
 
+"""
+from ._project import icon
+from ._project import Project
+from ._scan import ScanProcess
+from ._element import DataElement
 
-# Collaboration
-
-I am always open to collaboration, so if you spot bugs lets me know, or if
-you would like to contribute or get involved just shout!
-
-
-# Compatibility
-
-Launchpad has been tested under Python 2.7 and Python 3.7 on Windows and Ubuntu.
+from ._access import create
+from ._access import load
+from .constants import log

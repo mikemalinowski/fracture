@@ -1,0 +1,5 @@
+INSERT INTO tags (tag)
+SELECT '$(TAG)'
+WHERE NOT EXISTS(
+  SELECT 1 FROM tags WHERE tag='$(TAG)'
+);
