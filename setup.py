@@ -11,7 +11,7 @@ else:
 
 setuptools.setup(
     name='fracture',
-    version='0.9.1',
+    version='0.9.2',
     author='Mike Malinowski',
     author_email='mike@twisted.space',
     description=short_description,
@@ -26,7 +26,7 @@ setuptools.setup(
     ],
     install_requires=['factories'],
     package_data={
-        '': ['sql/*.sql', '_res/*.png'],
+        '': ['sql/*.sql', '_res/*.png', 'built-in/*.py'],
     },
     keywords="fracture data composite",
 )
